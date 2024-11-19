@@ -3,13 +3,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 
 export default function Register() {
-  const [username, setUsernam] = useState('');
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const {createUser}  = useContext(AuthContext);
+  const createUser  = useContext(AuthContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
