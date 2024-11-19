@@ -5,6 +5,7 @@ import UserTestimonials from '../components/UserTestimonials/UserTestimonials'
 import Tips from '../components/Tips/Tips'
 
 
+
 function Home() {
   return (
     <div className='container mx-auto'>
@@ -12,7 +13,7 @@ function Home() {
      <Success/>
      <Tips/>
      <UserTestimonials/>
-   
+
     </div>
   )
 }

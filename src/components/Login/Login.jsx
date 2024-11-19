@@ -7,7 +7,7 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
 
-  const   { loginUser } = useContext(AuthContext);
+  const   { loginUser} = useContext(AuthContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -25,6 +25,14 @@ export default function Login() {
   
   
   };
+
+
+
+
+
+
+
+  
   return (
     <div className="max-w-md mx-auto p-6 border border-gray-300 rounded-lg shadow-lg">
         
@@ -60,6 +68,7 @@ export default function Login() {
           Login
         </button>
       </form>
+
     </div>
   );
 }

@@ -1,15 +1,20 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import { updateProfile } from 'firebase/auth/cordova';
+import { auth } from '../../../firebase.init';
+import { ToastContainer } from 'react-toastify';
 
 export default function Register() {
+    const {user} = useContext(AuthContext)
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [photoURL,setPhotoURL]=useState('')
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const createUser  = useContext(AuthContext);
+  const {createUser}  = useContext(AuthContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -17,9 +22,16 @@ export default function Register() {
     setLoading(true);
 
     try {
-      await createUser (email, password, username)
+      await createUser (email, password, username,photoURL)
       .then(res=>console.log(res))
+      const profile = {
+        displayName : username,
+        photoURL:photoURL,
+      }
+    await   updateProfile(auth.currentUser, profile);
       console.log('User  registered successfully');
+      alert(user.displayName)
+      
       navigate('/login'); // Redirect to login or another page
     } catch (error) {
       console.error(error);
@@ -31,6 +43,9 @@ export default function Register() {
 
   return (
     <div className="max-w-md mx-auto p-6 border-2 border-teal-500 rounded-lg py-10">
+
+
+
       <h2 className="text-2xl font-bold mb-4">Register</h2>
     
       <form onSubmit={handleSubmit}>
@@ -57,6 +72,17 @@ export default function Register() {
           />
         </div>
         <div className="mb-4">
+                    <label htmlFor="photoURL" className="block text-sm font-medium text-gray-700">Photo URL:</label>
+                    <input
+                        type="text"
+                        id="photoURL"
+                        value={photoURL}
+                        onChange={(e) => setPhotoURL(e.target.value)}
+                        required
+                        className="mt-1 block w-full p-2 border border-gray-300 rounded-md bg-blue-50 text-gray-800 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                    />
+                </div>
+        <div className="mb-4">
           <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password:</label>
           <input
             type="password"
@@ -77,6 +103,7 @@ export default function Register() {
           {loading ? 'Registering...' : 'Register'}
         </button>
       </form>
+      <button onClick={handleGoogleSignIn}>Login</button>
     </div>
   );
 }
