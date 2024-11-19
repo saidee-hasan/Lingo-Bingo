@@ -14,7 +14,7 @@ export default function Register() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const {createUser}  = useContext(AuthContext);
+  const {createUser,}  = useContext(AuthContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -32,7 +32,7 @@ export default function Register() {
       console.log('User  registered successfully');
       alert(user.displayName)
       
-      navigate('/login'); // Redirect to login or another page
+      navigate('/'); // Redirect to login or another page
     } catch (error) {
       console.error(error);
       setError('Registration failed. Please try again.');
@@ -103,7 +103,7 @@ export default function Register() {
           {loading ? 'Registering...' : 'Register'}
         </button>
       </form>
-      <button onClick={handleGoogleSignIn}>Login</button>
+
     </div>
   );
 }

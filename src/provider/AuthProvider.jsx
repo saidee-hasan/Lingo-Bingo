@@ -28,13 +28,11 @@ function AuthProvider({ children }) {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
+    
         console.log("Currently logged in User:", currentUser);
         setUser(currentUser)
      
-      } else {
-        console.log("No user is signed in.");
-      }
+     
     });
 
     // Cleanup function to unsubscribe from the listener

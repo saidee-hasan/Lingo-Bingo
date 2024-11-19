@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 
+
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -16,7 +17,7 @@ export default function Login() {
     try {
       const res = await loginUser (email, password); // Await the loginUser  call
       console.log(res.user.email); // Log the response from the loginUser  function
-  
+      navigate('/');
      
     } catch (err) {
       console.error(err);
@@ -25,8 +26,6 @@ export default function Login() {
   
   
   };
-
-
 
 
 
@@ -68,6 +67,10 @@ export default function Login() {
           Login
         </button>
       </form>
+
+
+
+
 
     </div>
   );

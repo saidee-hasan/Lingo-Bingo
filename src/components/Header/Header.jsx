@@ -6,14 +6,13 @@ import { AuthContext } from '../../provider/AuthProvider';
 
 const Header = () => {
 const {user, signOutUser }= useContext(AuthContext);
+
 const handleSignOut =()=>{
   signOutUser()
-  .then(()=>{
-    console.log("signout sucessyfully")
-  })
+  .then(res =>console.log(res))
 }
 
-console.log(user?.photoURL)
+
   return (
     <div className="navbar bg-gray-300 fixed z-50">
       
@@ -47,17 +46,17 @@ console.log(user?.photoURL)
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
 
-    <li><a href='/'>Home</a></li>
+    <li><Link to='/'>Home</Link></li>
 
-    <li><a href='/'>Start-learning</a></li>
-    <li><a href='/about'>About</a></li>
+    <li><Link to='/learning'>Start-learning</Link></li>
+    <li><Link to='/about'>About</Link></li>
       
       <li><a>Item 3</a></li>
     </ul>
   </div>
   <div className="navbar-end">
     {
-      user ?<><p onClick={handleSignOut}>Sign Out</p></>: <Link to={'/login'}> <button className='bg-green-50 p-2 rounded-md'> Login</button></Link>
+      user ? <> <p className='btn' onClick={handleSignOut}>Sign Out</p></>: <Link to={'/login'}> <button className='bg-green-50  p-2 rounded-md'> Login</button></Link>
     }
    
    
