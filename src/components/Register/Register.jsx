@@ -13,7 +13,7 @@ export default function Register() {
   const [photoURL,setPhotoURL]=useState('')
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const {createUser,}  = useContext(AuthContext);
 
   const handleSubmit = async (event) => {
