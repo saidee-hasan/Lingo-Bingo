@@ -13,13 +13,15 @@ import { auth } from "../../firebase.init";
 
 function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
+  const [loading,setLoading] = useState(true);
 
   const createUser = (email, password) => {
-    
+    setLoading(true)
     return createUserWithEmailAndPassword(auth, email, password);
   
   };
   const loginUser = async (email, password) => {
+    setLoading(true)
     return signInWithEmailAndPassword(auth, email, password);
   };
  
@@ -31,7 +33,7 @@ function AuthProvider({ children }) {
     
         console.log("Currently logged in User:", currentUser);
         setUser(currentUser)
-     
+     setLoading(false)
      
     });
 
@@ -42,6 +44,7 @@ function AuthProvider({ children }) {
     };
   }, [auth]);
 const signOutUser = ()=>{
+  setLoading(true)
   return signOut(auth)
 }
 
@@ -50,6 +53,7 @@ const signOutUser = ()=>{
     loginUser,
     user,
     signOutUser,
+    loading
    
   
   };

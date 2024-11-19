@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 
 
@@ -9,15 +9,18 @@ export default function Login() {
   const [error, setError] = useState(null);
 
   const   { loginUser} = useContext(AuthContext);
-
+  const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
     setError(''); // Clear previous errors
   
     try {
-      const res = await loginUser (email, password); // Await the loginUser  call
+      const res = await loginUser (email, password)
+      .then(res=>{
+        navigate('/')
+      })// Await the loginUser  call
       console.log(res.user.email); // Log the response from the loginUser  function
-      navigate('/');
+      
      
     } catch (err) {
       console.error(err);

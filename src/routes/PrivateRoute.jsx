@@ -4,8 +4,10 @@ import { AuthContext } from '../provider/AuthProvider';
 import { Navigate } from 'react-router-dom';
 
 function PrivateRoute({ children }) {
-  const { user } = useContext(AuthContext);
-  
+  const { user,loading } = useContext(AuthContext);
+  if(loading){
+    return <span className="loading loading-dots loading-lg text-center"></span>
+  }
   if (user) {
     return children; // Render children if user is authenticated
   }
