@@ -21,6 +21,12 @@ const UserTestimonials = () => {
       image: "path_to_image_alice.jpg", // Replace with actual image path
       rating: 5,
     },
+    {
+      name: "Alice Johnson",
+      feedback: "The tips provided are very helpful. I've seen significant improvement in my vocabulary.",
+      image: "path_to_image_alice.jpg", // Replace with actual image path
+      rating: 5,
+    },
   ];
 
   return (

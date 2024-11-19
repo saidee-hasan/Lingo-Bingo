@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getAuth } from "firebase/auth/cordova";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD15-bx81D_582sduHM793Zh-t7btI0JVk",
@@ -15,4 +16,4 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-export app = getAuth(app)
+export  const auth = getAuth(app)

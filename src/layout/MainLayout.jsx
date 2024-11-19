@@ -7,7 +7,7 @@ function MainLayout() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow"> {/* This allows the main content to grow and fill available space */}
+      <main className="flex-grow mt-20"> {/* This allows the main content to grow and fill available space */}
         <Outlet />
       </main>
       <Footer />
