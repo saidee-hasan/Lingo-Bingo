@@ -1,16 +1,16 @@
 import React from 'react';
 
 const lessons = [
-  { id: 1, title: 'Lesson 1', link: 'lesson/lesson_1.html' },
-  { id: 2, title: 'Lesson 2', link: 'lesson/lesson_2.html' },
-  { id: 3, title: 'Lesson 3', link: 'lesson/lesson_3.html' },
-  { id: 4, title: 'Lesson 4', link: 'lesson/lesson_4.html' },
-  { id: 5, title: 'Lesson 5', link: 'lesson/lesson_5.html' },
-  { id: 6, title: 'Lesson 6', link: 'lesson/lesson_6.html' },
-  { id: 7, title: 'Lesson 7', link: 'lesson/lesson_7.html' },
-  { id: 8, title: 'Lesson 8', link: 'lesson/lesson_8.html' },
-  { id: 9, title: 'Lesson 9', link: 'lesson/lesson_9.html' },
-  { id: 10, title: 'Lesson 10', link: 'lesson/lesson_10.html' },
+  { id: 1, title: 'Lesson 1', description: 'Introduction to Vocabulary', link: 'lesson/lesson_1.html' },
+  { id: 2, title: 'Lesson 2', description: 'Basic Nouns and Verbs', link: 'lesson/lesson_2.html' },
+  { id: 3, title: 'Lesson 3', description: 'Common Adjectives', link: 'lesson/lesson_3.html' },
+  { id: 4, title: 'Lesson 4', description: 'Constructing Simple Sentences', link: 'lesson/lesson_4.html' },
+  { id: 5, title: 'Lesson 5', description: 'Question Words', link: 'lesson/lesson_5.html' },
+  { id: 6, title: 'Lesson 6', description: 'Days of the Week', link: 'lesson/lesson_6.html' },
+  { id: 7, title: 'Lesson 7', description: 'Colors and Shapes', link: 'lesson/lesson_7.html' },
+  { id: 8, title: 'Lesson 8', description: 'Food Vocabulary', link: 'lesson/lesson_8.html' },
+  { id: 9, title: 'Lesson 9', description: 'Travel Vocabulary', link: 'lesson/lesson_9.html' },
+  { id: 10, title: 'Lesson 10', description: 'Review and Practice', link: 'lesson/lesson_10.html' },
 ];
 
 function LearningCard() {
@@ -18,7 +18,7 @@ function LearningCard() {
     <div className="container mx-auto p-6">
       <h1 className="text-3xl font-bold text-center mb-6">Vocabulary Learning Lessons</h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-4">
         {lessons.map(lesson => (
           <div
             key={lesson.id}
@@ -26,6 +26,7 @@ function LearningCard() {
             onClick={() => window.location.href = lesson.link}
           >
             <h2 className="text-lg font-semibold text-center">{lesson.title}</h2>
+            <p className="text-sm text-gray-600 text-center">{lesson.description}</p>
           </div>
         ))}
       </div>
@@ -35,7 +36,7 @@ function LearningCard() {
         <iframe
           width="560"
           height="315"
-          src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+          src="https://www.youtube.com/embed/YOUR_VIDEO_ID" // Replace YOUR_VIDEO_ID with the actual video ID
           title="YouTube video player"
           className="mx-auto"
           frameBorder="0"
