@@ -17,7 +17,7 @@ export default function Login() {
     try {
       const res = await loginUser (email, password); // Await the loginUser  call
       console.log(res.user.email); // Log the response from the loginUser  function
-      navigate('/');
+      navigate('');
      
     } catch (err) {
       console.error(err);
