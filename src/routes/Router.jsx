@@ -23,7 +23,7 @@ const router = createBrowserRouter([
       {path:"/about",element:<About/>},
       {
         path: "/category/:id/", // This is the correct way to define the child route
-        element: <Card />,
+        element:<PrivateRoute><Card /></PrivateRoute> ,
         loader:()=> fetch("../vocabulary.json")
       },
       {path:"/learning/",element:<PrivateRoute><StartLearning/></PrivateRoute>,loader:()=> fetch("../categories.json"),
