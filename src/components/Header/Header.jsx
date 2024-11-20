@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 
 const Header = () => {
@@ -12,13 +12,13 @@ const Header = () => {
     };
 
     return (
-        <div className="navbar bg-gray-300 fixed z-50">
+        <div className="navbar bg-gray-800 fixed z-50 w-full">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5"
+                            className="h-5 w-5 text-white"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -31,28 +31,28 @@ const Header = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        <li><a href='/about'>About</a></li>
-                        <li><a>Item 3</a></li>
+                        className="menu menu-sm dropdown-content bg-gray-700 rounded-box z-[1] mt-3 w-52 p-2 shadow-lg">
+                        <li><NavLink to='/about' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-white')}>About</NavLink></li>
+                        <li><NavLink to='/item3' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-white')}>Item 3</NavLink></li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <a className="btn btn-ghost text-xl text-white">My App</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/learning'>Start-learning</Link></li>
-                    <li><Link to='/about'>About</Link></li>
-                    <li><a>Item 3</a></li>
+                    <li><NavLink to='/' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-white')}>Home</NavLink></li>
+                    <li><NavLink to='/learning' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-white')}>Start Learning</NavLink></li>
+                    <li><NavLink to='/about' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-white')}>About</NavLink></li>
+                    <li><NavLink to='/item3' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-white')}>Item 3</NavLink></li>
                 </ul>
             </div>
             <div className="navbar-end">
                 {
                     user ? (
-                        <p className='btn' onClick={handleSignOut}>Sign Out</p>
+                        <button className='bg-red-500 text-white p-2 rounded-md hover:bg-red-600 transition duration-200' onClick={handleSignOut}>Sign Out</button>
                     ) : (
                         <Link to={'/login'}>
-                            <button className='bg-green-50 p-2 rounded-md'>Login</button>
+                            <button className='bg-green-500 text-white p-2 rounded-md hover:bg-green-600 transition duration-200'>Login</button>
                         </Link>
                     )
                 }

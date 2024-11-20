@@ -1,0 +1,57 @@
+[
+    {
+        "Id": "word001",
+        "word": "apple",
+        "pronunciation": "/ˈæp.əl/",
+        "meaning": "a round fruit with red or green skin and a whitish interior",
+        "part_of_speech": "noun",
+        "difficulty": "easy",
+        "Lesson_no": 1,
+        "when_to_say": "When referring to the fruit or using it in idiomatic expressions.",
+        "example": "She ate an apple for lunch."
+    },
+    {
+        "Id": "word002",
+        "word": "run",
+        "pronunciation": "/rʌn/",
+        "meaning": "to move at a speed faster than a walk",
+        "part_of_speech": "verb",
+        "difficulty": "easy",
+        "Lesson_no": 1,
+        "when_to_say": "When describing the action of moving quickly on foot.",
+        "example": "He likes to run in the park every morning."
+    },
+    {
+        "Id": "word003",
+        "word": "happy",
+        "pronunciation": "/ˈhæpi/",
+        "meaning": "feeling or showing pleasure or contentment",
+        "part_of_speech": "adjective",
+        "difficulty": "easy",
+        "Lesson_no": 1,
+        "when_to_say": "When expressing feelings of joy or satisfaction.",
+        "example": "She felt happy when she received the good news."
+    },
+    {
+        "Id": "word004",
+        "word": "book",
+        "pronunciation": "/bʊk/",
+        "meaning": "a set of written, printed, or blank pages fastened together along one side and encased between protective covers",
+        "part_of_speech": "noun",
+        "difficulty": "easy",
+        "Lesson_no": 1,
+        "when_to_say": "When referring to a physical or digital collection of written content.",
+        "example": "He borrowed a book from the library."
+    },
+    {
+        "Id": "word005",
+        "word": "learn",
+        "pronunciation": "/lɜrn/",
+        "meaning": "to gain knowledge or skill by study or experience",
+        "part_of_speech": "verb",
+        "difficulty": "easy",
+        "Lesson_no": 1,
+        "when_to_say": "When talking about acquiring knowledge or skills.",
+        "example": "I want to learn how to play the guitar."
+    }
+]
