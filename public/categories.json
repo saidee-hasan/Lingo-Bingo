@@ -1,12 +1,82 @@
 [
-    { "id": 1, "title": "Lesson 1", "description": "Introduction to Vocabulary" },
-    { "id": 2, "title": "Lesson 2", "description": "Basic Nouns and Verbs" },
-    { "id": 3, "title": "Lesson 3", "description": "Common Adjectives" },
-    { "id": 4, "title": "Lesson 4", "description": "Constructing Simple Sentences" },
-    { "id": 5, "title": "Lesson 5", "description": "Question Words" },
-    { "id": 6, "title": "Lesson 6", "description": "Days of the Week" },
-    { "id": 7, "title": "Lesson 7", "description": "Colors and Shapes" },
-    { "id": 8, "title": "Lesson 8", "description": "Food Vocabulary" },
-    { "id": 9, "title": "Lesson 9", "description": "Travel Vocabulary" },
-    { "id": 10, "title": "Lesson 10", "description": "Review and Practice" }
+    { 
+        "id": 1, 
+        "title": "Lesson 1", 
+        "description": "Introduction to Vocabulary",  
+        "lesson_no": 1,
+        "duration": "30 minutes",
+        "level": "Beginner"
+    },
+    { 
+        "id": 2, 
+        "title": "Lesson 2", 
+        "description": "Basic Nouns and Verbs", 
+        "lesson_no": 2,
+        "duration": "45 minutes",
+        "level": "Beginner"
+    },
+    { 
+        "id": 3, 
+        "title": "Lesson 3", 
+        "description": "Common Adjectives", 
+        "lesson_no": 3,
+        "duration": "40 minutes",
+        "level": "Beginner"
+    },
+    { 
+        "id": 4, 
+        "title": "Lesson 4", 
+        "description": "Constructing Simple Sentences", 
+        "lesson_no": 4,
+        "duration": "50 minutes",
+        "level": "Beginner"
+    },
+    { 
+        "id": 5, 
+        "title": "Lesson 5", 
+        "description": "Question Words", 
+        "lesson_no": 5,
+        "duration": "30 minutes",
+        "level": "Beginner"
+    },
+    { 
+        "id": 6, 
+        "title": "Lesson 6", 
+        "description": "Days of the Week", 
+        "lesson_no": 6,
+        "duration": "30 minutes",
+        "level": "Beginner"
+    },
+    { 
+        "id": 7, 
+        "title": "Lesson 7", 
+        "description": "Colors and Shapes", 
+        "lesson_no": 7,
+        "duration": "35 minutes",
+        "level": "Beginner"
+    },
+    { 
+        "id": 8, 
+        "title": "Lesson 8", 
+        "description": "Food Vocabulary", 
+        "lesson_no": 8,
+        "duration": "40 minutes",
+        "level": "Beginner"
+    },
+    { 
+        "id": 9, 
+        "title": "Lesson 9", 
+        "description": "Travel Vocabulary", 
+        "lesson_no": 9,
+        "duration": "45 minutes",
+        "level": "Beginner"
+    },
+    { 
+        "id": 10, 
+        "title": "Lesson 10", 
+        "description": "Review and Practice", 
+        "lesson_no": 10,
+        "duration": "60 minutes",
+        "level": "Beginner"
+    }
 ]

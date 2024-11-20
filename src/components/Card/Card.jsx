@@ -1,8 +1,11 @@
-import { useLoaderData } from "react-router-dom"
+import { useLoaderData, useParams } from "react-router-dom"
 
 function Card() {
-    const data = useLoaderData()
-    console.log(data)
+    const data = useLoaderData();
+    const {id} =useParams();
+    console.log(id)
+
+    
   return (
     <div>
 
