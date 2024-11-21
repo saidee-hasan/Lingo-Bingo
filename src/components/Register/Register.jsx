@@ -3,10 +3,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import { updateProfile } from 'firebase/auth/cordova';
 import { auth } from '../../../firebase.init';
-import { ToastContainer } from 'react-toastify';
+import { Bounce, toast, ToastContainer } from 'react-toastify';
 
 export default function Register() {
-    const {user} = useContext(AuthContext)
+  
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -23,28 +23,68 @@ export default function Register() {
 
     try {
       await createUser (email, password, username,photoURL)
-      .then(res=>console.log(res))
+      .then(res=>{
+        if(res){
+          handleToast('User  registered successfully')
+        }else{
+        
+        }
+   
+      })
       const profile = {
         displayName : username,
         photoURL:photoURL,
       }
     await   updateProfile(auth.currentUser, profile);
       console.log('User  registered successfully');
-      alert(user.displayName)
+     
       
+
       navigate('/'); // Redirect to login or another page
     } catch (error) {
       console.error(error);
       setError('Registration failed. Please try again.');
+      handleToast('User  registered Unccessfully')
+    
     } finally {
       setLoading(false);
     }
   };
 
+
+
+const handleToast=(name)=>{
+  toast(`${name}`, {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    transition: Bounce,
+    });
+}
+
+
+
   return (
     <div className="max-w-md mx-auto p-6 border-2 border-teal-500 rounded-lg py-10">
 
-
+<ToastContainer
+position="top-center"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+transition: Bounce
+/>
 
       <h2 className="text-2xl font-bold mb-4">Register</h2>
     
