@@ -26,9 +26,9 @@ const router = createBrowserRouter([
       {path:"/profile",element:<PrivateRoute><UserProfile/></PrivateRoute>  },
       {path:"/register",element:<Register/>},
       {path:"/about",element:<About/>},
-      {path:"/forgot",element:<ForgotPassword/>},
-      {path:"/update",element:<UpdateProfile/>},
-      {path:"/tutorial",element:<Tutorial/>},
+      {path:"/forgot",element:  <ForgotPassword/>},
+      {path:"/update",element:<PrivateRoute><UpdateProfile/></PrivateRoute>  },
+      {path:"/tutorial",element:<PrivateRoute><Tutorial/></PrivateRoute> },
       {
         path: "/lessons/:id/", // This is the correct way to define the child route
         element:<PrivateRoute><Card /></PrivateRoute> ,

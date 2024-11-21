@@ -33,9 +33,11 @@ const Header = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-gray-700 rounded-box z-[1] mt-3 w-52 p-2 shadow-lg">
-                        <li><NavLink to='/about' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-white')}>About</NavLink></li>
-                        <li><NavLink to='/item3' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-white')}>Item 3</NavLink></li>
-                    </ul>
+                         <li><NavLink to='/' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-gray-200')}>Home</NavLink></li>
+                    <li><NavLink to='/lessons' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-gray-200')}>Start Learning</NavLink></li>
+                    <li><NavLink to='/about' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-gray-200')}>About</NavLink></li>
+                    <li><NavLink to='/tutorial' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-gray-200')}>Tutorial</NavLink></li>
+               </ul>
                 </div>
                 <img className='md:w-16 md:h-16 h-10' src={Logo} alt="Logo" />
             </div>
