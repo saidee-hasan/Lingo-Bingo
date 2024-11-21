@@ -1,6 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { auth } from '../../../firebase.init';
+
+
 
 
 export default function Login() {
@@ -29,10 +33,17 @@ export default function Login() {
   
   
   };
-
-
-
-
+  const [isLoading, setIsLoading] = useState(false);
+  const provider = new GoogleAuthProvider()
+  const handleLogin = () => {
+  
+  signInWithPopup(auth,provider) 
+   .then(res=>{
+    navigate('/')
+    console.log(res)
+  })
+    console.log("Google login clicked");
+};
 
   
   return (
@@ -70,10 +81,26 @@ export default function Login() {
           Login
         </button>
       </form>
-
-
-
-
+      <br />
+      <button 
+      onClick={handleLogin} 
+      className="flex items-center justify-center px-4 py-2 mx-auto bg-white shadow-2xl rounded-md transition duration-200 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+      aria-label="Login with Google"
+      disabled={isLoading} // Disable button while loading
+    >
+      {isLoading ? (
+        <div className="loader"></div> // Optional loading spinner
+      ) : (
+        <>
+          <img 
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/800px-Google_2015_logo.svg.png" 
+            alt="Google Logo" 
+            className="h-8 mr-2"
+          />
+          <span className="text-gray-800 font-bold  text-xl">Login with Google</span>
+        </>
+      )}
+    </button>
 
     </div>
   );

@@ -1,19 +1,19 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth } from "firebase/auth/cordova";
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD15-bx81D_582sduHM793Zh-t7btI0JVk",
-  authDomain: "lingobingo-bd9e3.firebaseapp.com",
-  projectId: "lingobingo-bd9e3",
-  storageBucket: "lingobingo-bd9e3.firebasestorage.app",
-  messagingSenderId: "121528282949",
-  appId: "1:121528282949:web:b95216b459b50cbe13182c",
-  measurementId: "G-2L3C2M1MYY"
+  apiKey: "AIzaSyCnB41FUjvAelr2J_OyqOJTXhGFJEegeeQ",
+  authDomain: "problem-8f5f0.firebaseapp.com",
+  projectId: "problem-8f5f0",
+  storageBucket: "problem-8f5f0.firebasestorage.app",
+  messagingSenderId: "937104619175",
+  appId: "1:937104619175:web:1a9cdf238a43ebdc948d82",
+  measurementId: "G-8DSJ56WS75"
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 export  const auth = getAuth(app)
