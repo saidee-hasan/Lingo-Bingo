@@ -10,6 +10,7 @@ import StartLearning from "../pages/StartLearning";
 import PrivateRoute from "./PrivateRoute";
 import Card from "../components/Card/Card";
 import ForgotPassword from "../components/ForgotPassword/ForgotPassword";
+import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
 
 
 const router = createBrowserRouter([
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       {path:"/register",element:<Register/>},
       {path:"/about",element:<About/>},
       {path:"/forgot",element:<ForgotPassword/>},
+      {path:"/update",element:<UpdateProfile/>},
       {
         path: "/lessons/:id/", // This is the correct way to define the child route
         element:<PrivateRoute><Card /></PrivateRoute> ,
