@@ -1,7 +1,9 @@
-// src/components/Footer.js
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt, faEnvelope, faPhone, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+
+
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -50,19 +52,21 @@ function Footer() {
           <ul className="flex justify-center space-x-4 mt-2">
             <li>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook" className="hover:text-blue-400 transition duration-200">
-                <FontAwesomeIcon icon={['fab', 'facebook']} />
+                <FontAwesomeIcon icon={faFacebook} />
               </a>
             </li>
             <li>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter" className="hover:text-blue-400 transition duration-200">
-                <FontAwesomeIcon icon={['fab', 'twitter']} />
+                <FontAwesomeIcon icon={faTwitter} />
               </a>
             </li>
             <li>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" className="hover:text-blue-400 transition duration-200">
-                <FontAwesomeIcon icon={['fab', 'instagram']} />
+                <FontAwesomeIcon icon={faInstagram} />
               </a>
             </li>
+            
+           
           </ul>
         </div>
       </div>

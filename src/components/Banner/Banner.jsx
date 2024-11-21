@@ -8,15 +8,15 @@ const slides = [
         title: 'Unlock a World of Languages',
         description: 'Join our community and start your language journey today!',
         cta: 'Get Started',
-        link: '#'
+        link: '/register'
     },
     {
         id: 2,
         image: 'https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?semt=ais_hybrid',
         title: 'Learn Anywhere, Anytime',
         description: 'Practice your skills on the go with our mobile app.',
-        cta: 'Download Now',
-        link: '#'
+        cta: 'Get Started',
+        link: '/register'
     },
 ];
 
@@ -39,8 +39,8 @@ const Banner = () => {
                     className={`absolute inset-0 rounded-md transition-opacity bg-slate-300 duration-700 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
                 >
                     <div className="absolute md:p-12 p-2 inset-0  flex flex-col justify-center items-start p-8">
-                        <h2 className="text-2xl md:text-4xl text-white font-bold">{slide.title}</h2>
-                        <p className="mt-4 text-white">{slide.description}</p>
+                        <h2 className="text-2xl md:text-4xl text-black  font-bold">{slide.title}</h2>
+                        <p className="mt-4 text-black">{slide.description}</p>
                         <a href={slide.link} className="mt-6 inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
                             {slide.cta}
                         </a>

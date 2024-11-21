@@ -9,6 +9,7 @@ import UserProfile from "../pages/UserProfile";
 import StartLearning from "../pages/StartLearning";
 import PrivateRoute from "./PrivateRoute";
 import Card from "../components/Card/Card";
+import ForgotPassword from "../components/ForgotPassword/ForgotPassword";
 
 
 const router = createBrowserRouter([
@@ -21,12 +22,13 @@ const router = createBrowserRouter([
       {path:"/profile",element:<PrivateRoute><UserProfile/></PrivateRoute>  },
       {path:"/register",element:<Register/>},
       {path:"/about",element:<About/>},
+      {path:"/forgot",element:<ForgotPassword/>},
       {
-        path: "/category/:id/", // This is the correct way to define the child route
+        path: "/lessons/:id/", // This is the correct way to define the child route
         element:<PrivateRoute><Card /></PrivateRoute> ,
         loader:()=> fetch("../vocabulary.json")
       },
-      {path:"/learning/",element:<PrivateRoute><StartLearning/></PrivateRoute>,loader:()=> fetch("../categories.json"),
+      {path:"/lessons/",element:<PrivateRoute><StartLearning/></PrivateRoute>,loader:()=> fetch("../categories.json"),
       
 
 

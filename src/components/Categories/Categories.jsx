@@ -13,7 +13,7 @@ function Categories({ categoriesData }) {
           {categoriesData.map(lesson => (
             <Link 
               key={lesson.id} 
-              to={`/category/${lesson.lesson_no}`} 
+              to={`/lessons/${lesson.lesson_no}`} 
               aria-label={`Go to lesson: ${lesson.title}`}
             >
               <div className="bg-gray-100 p-5 h-48 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 cursor-pointer flex flex-col justify-between">

@@ -42,7 +42,7 @@ const Header = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     <li><NavLink to='/' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-gray-200')}>Home</NavLink></li>
-                    <li><NavLink to='/learning' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-gray-200')}>Start Learning</NavLink></li>
+                    <li><NavLink to='/lessons' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-gray-200')}>Start Learning</NavLink></li>
                     <li><NavLink to='/about' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-gray-200')}>About</NavLink></li>
                     <li><NavLink to='/item3' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-gray-200')}>Item 3</NavLink></li>
                 </ul>
@@ -58,7 +58,7 @@ const Header = () => {
                             Sign Out
                         </button>
                     ) : (
-                        <Link to={'/login'}>
+                        <Link to={'/register'}>
                             <button
                                 className='bg-green-600 text-white p-2 rounded-md hover:bg-green-700 transition duration-200'
                                 aria-label="Login"
