@@ -23,7 +23,7 @@ const UpdateProfile = () => {
       // Optionally, you can also update the user's information in your database here
 
       // Navigate back to the My Profile route
-      navigate('');
+      navigate('/');
     } catch (err) {
       console.error(err);
       setError('Failed to update profile. Please try again.');
