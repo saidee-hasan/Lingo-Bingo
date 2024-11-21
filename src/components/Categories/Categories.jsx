@@ -9,7 +9,7 @@ function Categories({ categoriesData }) {
     '#FFC3A0', // Light Pink
     '#FF677D', // Light Purple
     '#D4A5A5', // Light Brown
-    '#392F5A', // Dark Purple
+    '#392F5R', // Dark Purple
     '#6A0572', // Dark Pink
     '#D9BF77', // Light Yellow
     '#B9FBC0', // Light Green
@@ -36,7 +36,7 @@ function Categories({ categoriesData }) {
               >
                 <h2 className="text-xl font-semibold text-center">{lesson.title}</h2>
                 <p className="text-base text-gray-700 text-center">{lesson.description}</p>
-                <h1 className="text-xl text-center text-gray-800 font-bold">{lesson.duration}</h1>
+                <h1 className="text-xl text-center text-gray-600 font-bold">{lesson.duration}</h1>
               </div>
             </Link>
           ))}
