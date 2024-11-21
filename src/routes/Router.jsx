@@ -11,6 +11,8 @@ import PrivateRoute from "./PrivateRoute";
 import Card from "../components/Card/Card";
 import ForgotPassword from "../components/ForgotPassword/ForgotPassword";
 import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
+import Tutorial from "../components/Tutorial/Tutorial";
 
 
 const router = createBrowserRouter([
@@ -20,22 +22,20 @@ const router = createBrowserRouter([
     children:[
       {path:"/",element:<Home/>},
       {path:"/login",element:<Login/>},
+     
       {path:"/profile",element:<PrivateRoute><UserProfile/></PrivateRoute>  },
       {path:"/register",element:<Register/>},
       {path:"/about",element:<About/>},
       {path:"/forgot",element:<ForgotPassword/>},
       {path:"/update",element:<UpdateProfile/>},
+      {path:"/tutorial",element:<Tutorial/>},
       {
         path: "/lessons/:id/", // This is the correct way to define the child route
         element:<PrivateRoute><Card /></PrivateRoute> ,
         loader:()=> fetch("../vocabulary.json")
       },
-      {path:"/lessons/",element:<PrivateRoute><StartLearning/></PrivateRoute>,loader:()=> fetch("../categories.json"),
-      
-
-
-
-      }
+      {path:"/lessons/",element:<PrivateRoute><StartLearning/></PrivateRoute>,loader:()=> fetch("../categories.json"),},
+      { path: "*", element: <ErrorPage /> }
     ]
   },
 ]);

@@ -44,7 +44,7 @@ const Header = () => {
                     <li><NavLink to='/' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-gray-200')}>Home</NavLink></li>
                     <li><NavLink to='/lessons' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-gray-200')}>Start Learning</NavLink></li>
                     <li><NavLink to='/about' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-gray-200')}>About</NavLink></li>
-                    <li><NavLink to='/item3' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-gray-200')}>Item 3</NavLink></li>
+                    <li><NavLink to='/tutorial' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-gray-200')}>Tutorial</NavLink></li>
                 </ul>
             </div>
             <div className="navbar-end">
