@@ -33,13 +33,13 @@ function Footer() {
           <nav>
             <ul className="space-y-1">
               <li>
-                <a href="/privacy-policy" className="hover:text-blue-400">Privacy Policy</a>
+                <a href="/privacy-policy" className="hover:text-blue-400 transition duration-200" aria-label="Privacy Policy">Privacy Policy</a>
               </li>
               <li>
-                <a href="/terms-of-service" className="hover:text-blue-400">Terms of Service</a>
+                <a href="/terms-of-service" className="hover:text-blue-400 transition duration-200" aria-label="Terms of Service">Terms of Service</a>
               </li>
               <li>
-                <a href="/contact" className="hover:text-blue-400">Contact Us</a>
+                <a href="/contact" className="hover:text-blue-400 transition duration-200" aria-label="Contact Us">Contact Us</a>
               </li>
             </ul>
           </nav>
@@ -49,17 +49,17 @@ function Footer() {
           <p>Stay connected with us on social media.</p>
           <ul className="flex justify-center space-x-4 mt-2">
             <li>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook" className="hover:text-blue-400 transition duration-200">
                 <FontAwesomeIcon icon={['fab', 'facebook']} />
               </a>
             </li>
             <li>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter" className="hover:text-blue-400 transition duration-200">
                 <FontAwesomeIcon icon={['fab', 'twitter']} />
               </a>
             </li>
             <li>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" className="hover:text-blue-400 transition duration-200">
                 <FontAwesomeIcon icon={['fab', 'instagram']} />
               </a>
             </li>

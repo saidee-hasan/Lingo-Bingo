@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import Logo from "../../assets/logo.png";
 
 const Header = () => {
     const { user, signOutUser  } = useContext(AuthContext);
@@ -12,13 +13,13 @@ const Header = () => {
     };
 
     return (
-        <div className="navbar bg-gray-800 fixed z-50 w-full">
-            <div className="navbar-start">
+        <div className="navbar bg-gray-800 text-white fixed z-50 w-full shadow-lg md:px-20">
+            <div className="navbar-start  ">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5 text-white"
+                            className="h-5 w-5"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor">
@@ -36,29 +37,40 @@ const Header = () => {
                         <li><NavLink to='/item3' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-white')}>Item 3</NavLink></li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl text-white">My App</a>
+                <img className='md:w-16 md:h-16 h-10' src={Logo} alt="Logo" />
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li><NavLink to='/' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-white')}>Home</NavLink></li>
-                    <li><NavLink to='/learning' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-white')}>Start Learning</NavLink></li>
-                    <li><NavLink to='/about' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-white')}>About</NavLink></li>
-                    <li><NavLink to='/item3' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-white')}>Item 3</NavLink></li>
+                    <li><NavLink to='/' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-gray-200')}>Home</NavLink></li>
+                    <li><NavLink to='/learning' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-gray-200')}>Start Learning</NavLink></li>
+                    <li><NavLink to='/about' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-gray-200')}>About</NavLink></li>
+                    <li><NavLink to='/item3' className={({ isActive }) => (isActive ? 'text-green-300' : 'text-gray-200')}>Item 3</NavLink></li>
                 </ul>
             </div>
             <div className="navbar-end">
                 {
                     user ? (
-                        <button className='bg-red-500 text-white p-2 rounded-md hover:bg-red-600 transition duration-200' onClick={handleSignOut}>Sign Out</button>
+                        <button
+                            className='bg-red-600 text-white p-2 rounded-md hover:bg-red-700 transition duration-200'
+                            onClick={handleSignOut}
+                            aria-label="Sign Out"
+                        >
+                            Sign Out
+                        </button>
                     ) : (
                         <Link to={'/login'}>
-                            <button className='bg-green-500 text-white p-2 rounded-md hover:bg-green-600 transition duration-200'>Login</button>
+                            <button
+                                className='bg-green-600 text-white p-2 rounded-md hover:bg-green-700 transition duration-200'
+                                aria-label="Login"
+                            >
+                                Login
+                            </button>
                         </Link>
                     )
                 }
                 <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
+                        <div className="w-10 rounded-full overflow-hidden border-2 border-gray-300">
                             <Link to={'/profile'}>
                                 <img
                                     alt="User  Avatar"
