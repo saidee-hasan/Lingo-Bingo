@@ -3,8 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { auth } from '../../../firebase.init';
+import { Bounce, toast, ToastContainer } from 'react-toastify';
 
-
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function Login() {
@@ -36,19 +37,54 @@ export default function Login() {
   const [isLoading, setIsLoading] = useState(false);
   const provider = new GoogleAuthProvider()
   const handleLogin = () => {
-  
+ 
   signInWithPopup(auth,provider) 
    .then(res=>{
     navigate('/')
     console.log(res)
+   
   })
-    console.log("Google login clicked");
+  toast('🦄 Wow so easy!', {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    transition: Bounce,
+    });
 };
-
+const tastClik=()=>{
+  toast('🦄 Wow so easy!', {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    transition: Bounce,
+    });
+}
   
   return (
     <div className="max-w-md mx-auto p-6 border border-gray-300 rounded-lg shadow-lg">
-        
+             <ToastContainer
+position="top-center"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+transition: Bounce
+/> 
       <h2 className="text-2xl font-bold mb-4 text-center">Login</h2>
       {error && <div className="mb-4 text-red-600 text-center">{error}</div>}
       <form onSubmit={handleSubmit}>
@@ -101,6 +137,7 @@ export default function Login() {
         </>
       )}
     </button>
+    <button onClick={tastClik}>Tosr</button>
 
     </div>
   );

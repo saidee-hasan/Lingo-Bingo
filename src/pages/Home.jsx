@@ -8,6 +8,8 @@ import UserFeedback from '../components/UserFeedback/UserFeedback'
 
 
 function Home() {
+
+
   return (
     <div className='container mx-auto'>
      <Slider/>
