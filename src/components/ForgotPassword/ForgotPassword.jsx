@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function ForgotPassword() {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(fals);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
