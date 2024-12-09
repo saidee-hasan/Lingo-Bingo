@@ -19,3 +19,4 @@
 ###### styled-components: For styling and theming the application
 ###### netlify: For deploying and hosting the application
 
+# Lingo-Bingo
